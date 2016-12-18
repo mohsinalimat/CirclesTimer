@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>average %d for week</key>
+        <dict>
+            <key>NSStringLocalizedFormatKey</key>
+            <string>Average for previous
+%#@units@</string>
+            <key>units</key>
+            <dict>
+                <key>NSStringFormatSpecTypeKey</key>
+                <string>NSStringPluralRuleType</string>
+                <key>NSStringFormatValueTypeKey</key>
+                <string>d</string>
+                <key>one</key>
+                <string>week</string>
+                <key>other</key>
+                <string>%d weeks</string>
+            </dict>
+        </dict>
+        <key>average %d for month</key>
+        <dict>
+            <key>NSStringLocalizedFormatKey</key>
+            <string>Average for previous
+%#@units@</string>
+            <key>units</key>
+            <dict>
+                <key>NSStringFormatSpecTypeKey</key>
+                <string>NSStringPluralRuleType</string>
+                <key>NSStringFormatValueTypeKey</key>
+                <string>d</string>
+                <key>one</key>
+                <string>month</string>
+                <key>other</key>
+                <string>%d months</string>
+            </dict>
+        </dict>
+    </dict>
+</plist>

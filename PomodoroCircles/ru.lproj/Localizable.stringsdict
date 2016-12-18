@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>average %d for week</key>
+        <dict>
+            <key>NSStringLocalizedFormatKey</key>
+            <string>Среднее за предыдущ%#@units@</string>
+            <key>units</key>
+            <dict>
+                <key>NSStringFormatSpecTypeKey</key>
+                <string>NSStringPluralRuleType</string>
+                <key>NSStringFormatValueTypeKey</key>
+                <string>d</string>
+                <key>one</key>
+                <string>юю
+неделю</string>
+                <key>many</key>
+                <string>ие
+%d недель</string>
+                <key>other</key>
+                <string>ие
+%d недели</string>
+            </dict>
+        </dict>
+        <key>average %d for month</key>
+        <dict>
+            <key>NSStringLocalizedFormatKey</key>
+            <string>Среднее за предыдущ%#@units@</string>
+            <key>units</key>
+            <dict>
+                <key>NSStringFormatSpecTypeKey</key>
+                <string>NSStringPluralRuleType</string>
+                <key>NSStringFormatValueTypeKey</key>
+                <string>d</string>
+                <key>one</key>
+                <string>ий
+месяц</string>
+                <key>many</key>
+                <string>ие
+%d месяцев</string>
+                <key>other</key>
+                <string>ие
+%d месяца</string>
+            </dict>
+        </dict>
+    </dict>
+</plist>

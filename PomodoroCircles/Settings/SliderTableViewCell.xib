@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="83" id="k8A-47-EJb" customClass="SliderTableViewCell" customModule="PomodoroTimer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="446" height="83"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k8A-47-EJb" id="2fr-hJ-vYg">
+                <rect key="frame" x="0.0" y="0.0" width="446" height="82.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F45-ng-dIo">
+                        <rect key="frame" x="16" y="8" width="268" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHP-4B-slo">
+                        <rect key="frame" x="294" y="8" width="136" height="18"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="igN-ta-mwA" customClass="PomodoroSlider" customModule="PomodoroTimer" customModuleProvider="target">
+                        <rect key="frame" x="14" y="34" width="418" height="41"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="customColor">
+                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="sliderValueChanged:" destination="k8A-47-EJb" eventType="valueChanged" id="V1p-5h-voc"/>
+                        </connections>
+                    </slider>
+                </subviews>
+                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="F45-ng-dIo" firstAttribute="top" secondItem="2fr-hJ-vYg" secondAttribute="topMargin" id="9vZ-Jy-lnb"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="sHP-4B-slo" secondAttribute="trailing" constant="8" id="L60-7W-Emv"/>
+                    <constraint firstItem="F45-ng-dIo" firstAttribute="leading" secondItem="2fr-hJ-vYg" secondAttribute="leadingMargin" constant="8" id="Pve-PN-1ho"/>
+                    <constraint firstItem="sHP-4B-slo" firstAttribute="leading" secondItem="F45-ng-dIo" secondAttribute="trailing" constant="10" id="WTI-bI-AhV"/>
+                    <constraint firstItem="igN-ta-mwA" firstAttribute="top" secondItem="F45-ng-dIo" secondAttribute="bottom" constant="8" id="bjA-k6-pS9"/>
+                    <constraint firstItem="F45-ng-dIo" firstAttribute="width" secondItem="2fr-hJ-vYg" secondAttribute="width" multiplier="0.6" id="lUm-ur-5Xr"/>
+                    <constraint firstItem="igN-ta-mwA" firstAttribute="leading" secondItem="2fr-hJ-vYg" secondAttribute="leadingMargin" constant="8" id="mx4-gK-Fko"/>
+                    <constraint firstItem="sHP-4B-slo" firstAttribute="centerY" secondItem="F45-ng-dIo" secondAttribute="centerY" id="opF-be-oiK"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="igN-ta-mwA" secondAttribute="bottom" id="q1B-bw-uIb"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="igN-ta-mwA" secondAttribute="trailing" constant="8" id="tXq-gd-2az"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <connections>
+                <outlet property="slider" destination="igN-ta-mwA" id="8qi-yH-zRQ"/>
+                <outlet property="title" destination="F45-ng-dIo" id="ELW-dO-Qd5"/>
+                <outlet property="value" destination="sHP-4B-slo" id="0CC-qj-aK1"/>
+            </connections>
+            <point key="canvasLocation" x="310" y="314.5"/>
+        </tableViewCell>
+    </objects>
+</document>

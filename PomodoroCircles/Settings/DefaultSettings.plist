@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PomodoroBreakPeriodicity</key>
+	<integer>4</integer>
+	<key>PomodoroWork</key>
+	<integer>25</integer>
+	<key>PomodoroShortBreak</key>
+	<integer>5</integer>
+	<key>PomodoroLongBreak</key>
+	<integer>15</integer>
+	<key>PomodoroAutomaticallyChangeState</key>
+	<true/>
+	<key>NotificationsWorkSound</key>
+	<string>Bell</string>
+	<key>NotificationsShortBreakSound</key>
+	<string>Fanfare</string>
+	<key>NotificationsLongBreakSound</key>
+	<string>Mail</string>
+	<key>ChartSwitch2</key>
+	<true/>
+	<key>ChartSwitch1</key>
+	<true/>
+	<key>ChartSwitch0</key>
+	<true/>
+	<key>ChartTimeUnit</key>
+	<integer>0</integer>
+	<key>ChartLastUnitsCount</key>
+	<integer>4</integer>
+	<key>ChartIncludeZeroDays</key>
+	<true/>
+	<key>PomodoroRestoringActivityState</key>
+	<integer>0</integer>
+	<key>PomodoroRestoringTimerState</key>
+	<integer>0</integer>
+</dict>
+</plist>

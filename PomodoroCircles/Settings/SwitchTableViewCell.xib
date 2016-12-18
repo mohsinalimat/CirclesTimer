@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="59" id="rtK-gD-u6m" customClass="SwitchTableViewCell" customModule="PomodoroTimer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="405" height="59"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rtK-gD-u6m" id="N6g-mg-E1i">
+                <rect key="frame" x="0.0" y="0.0" width="405" height="58.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHM-lJ-cvc">
+                        <rect key="frame" x="16" y="8" width="243" height="42"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9GC-sl-tjG" customClass="PomodoroSwicth" customModule="PomodoroTimer" customModuleProvider="target">
+                        <rect key="frame" x="340" y="14" width="51" height="31"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="customColor">
+                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="switchStateChanged:" destination="rtK-gD-u6m" eventType="valueChanged" id="HR9-Zh-oIk"/>
+                        </connections>
+                    </switch>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="9GC-sl-tjG" firstAttribute="centerY" secondItem="N6g-mg-E1i" secondAttribute="centerY" id="Ayy-aO-auD"/>
+                    <constraint firstItem="fHM-lJ-cvc" firstAttribute="leading" secondItem="N6g-mg-E1i" secondAttribute="leadingMargin" constant="8" id="O92-aj-YDd"/>
+                    <constraint firstItem="fHM-lJ-cvc" firstAttribute="top" secondItem="N6g-mg-E1i" secondAttribute="topMargin" id="PLx-sV-Ga2"/>
+                    <constraint firstItem="fHM-lJ-cvc" firstAttribute="centerY" secondItem="9GC-sl-tjG" secondAttribute="centerY" id="c7N-a5-zsG"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="9GC-sl-tjG" secondAttribute="trailing" constant="8" id="jwb-oD-Zvi"/>
+                    <constraint firstItem="fHM-lJ-cvc" firstAttribute="width" secondItem="N6g-mg-E1i" secondAttribute="width" multiplier="0.6" id="kvU-Ie-h1J"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="fHM-lJ-cvc" secondAttribute="bottom" id="zgb-xc-udX"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <connections>
+                <outlet property="title" destination="fHM-lJ-cvc" id="Yih-vV-XsE"/>
+                <outlet property="trigger" destination="9GC-sl-tjG" id="phC-9i-vSJ"/>
+            </connections>
+            <point key="canvasLocation" x="295.5" y="258.5"/>
+        </tableViewCell>
+    </objects>
+</document>

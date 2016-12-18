@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChartsViewController" customModule="PomodoroTimer" customModuleProvider="target">
+            <connections>
+                <outlet property="averagePreviousIntervalLabel" destination="jIX-Lh-HfC" id="cXA-9G-duP"/>
+                <outlet property="averagePreviousIntervalSwitch" destination="j3s-fr-4zI" id="gfx-BT-HCa"/>
+                <outlet property="averagePreviousUnitLabel" destination="guz-rQ-ZTL" id="QhM-N8-A6Y"/>
+                <outlet property="averagePreviousUnitSwitch" destination="yWD-OK-Cw5" id="194-2n-xUq"/>
+                <outlet property="chartView" destination="JnE-C6-dUn" id="8eQ-zY-myo"/>
+                <outlet property="previousUnitLabel" destination="TJ9-Au-88K" id="xsZ-me-kNf"/>
+                <outlet property="previousUnitSwitch" destination="LLy-LU-D9c" id="oC8-v1-aIS"/>
+                <outlet property="timeUnitSegmentedControl" destination="yEr-q0-vw9" id="BKU-1y-m9l"/>
+                <outlet property="view" destination="hiK-Yx-ljG" id="aor-1X-Iff"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="hiK-Yx-ljG" customClass="GradientView" customModule="PomodoroTimer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="biy-TZ-8lF">
+                    <rect key="frame" x="361" y="10" width="197" height="30"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oto-AT-hL3">
+                            <rect key="frame" x="0.0" y="0.0" width="11" height="30"/>
+                            <state key="normal" image="Backward">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="moveChartBackward:" destination="-1" eventType="touchUpInside" id="1wz-8f-cHm"/>
+                            </connections>
+                        </button>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yEr-q0-vw9">
+                            <rect key="frame" x="21" y="0.0" width="155" height="31"/>
+                            <segments>
+                                <segment title="First"/>
+                                <segment title="Second"/>
+                            </segments>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="changeTimeUnit:" destination="-1" eventType="valueChanged" id="mdx-I4-hQw"/>
+                            </connections>
+                        </segmentedControl>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMx-iO-1ul">
+                            <rect key="frame" x="186" y="0.0" width="11" height="30"/>
+                            <state key="normal" image="Forward">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="moveChartForward:" destination="-1" eventType="touchUpInside" id="dFY-iD-lcc"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Oto-AT-hL3" firstAttribute="width" secondItem="eMx-iO-1ul" secondAttribute="width" id="Frn-CD-Vrz"/>
+                        <constraint firstAttribute="height" constant="30" id="vrX-Ru-Rtj"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="vrX-Ru-Rtj"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=compact">
+                        <mask key="constraints">
+                            <include reference="vrX-Ru-Rtj"/>
+                        </mask>
+                    </variation>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nWJ-pI-6N6">
+                    <rect key="frame" x="361" y="70" width="197" height="240"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3m2-XJ-8Sm">
+                            <rect key="frame" x="0.0" y="0.0" width="197" height="60"/>
+                            <subviews>
+                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LLy-LU-D9c" customClass="PomodoroSwicth" customModule="PomodoroTimer" customModuleProvider="target">
+                                    <rect key="frame" x="74" y="0.0" width="51" height="31"/>
+                                    <connections>
+                                        <action selector="changeSwitchState:" destination="-1" eventType="valueChanged" id="24F-F7-KR2"/>
+                                    </connections>
+                                </switch>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TJ9-Au-88K">
+                                    <rect key="frame" x="0.0" y="36" width="197" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="Y2E-tJ-f1W"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="Y2E-tJ-f1W"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=compact">
+                                        <mask key="constraints">
+                                            <include reference="Y2E-tJ-f1W"/>
+                                        </mask>
+                                    </variation>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="TJ9-Au-88K" firstAttribute="width" secondItem="3m2-XJ-8Sm" secondAttribute="width" id="59s-S8-ent"/>
+                                <constraint firstAttribute="height" constant="60" id="LLh-n7-zBA"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="LLh-n7-zBA"/>
+                                    <exclude reference="59s-S8-ent"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=compact" distribution="equalSpacing" spacing="0.0">
+                                <mask key="constraints">
+                                    <include reference="LLh-n7-zBA"/>
+                                    <include reference="59s-S8-ent"/>
+                                </mask>
+                            </variation>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ssl-iP-dLf">
+                            <rect key="frame" x="0.0" y="90" width="197" height="60"/>
+                            <subviews>
+                                <switch opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yWD-OK-Cw5" customClass="PomodoroSwicth" customModule="PomodoroTimer" customModuleProvider="target">
+                                    <rect key="frame" x="74" y="0.0" width="51" height="31"/>
+                                    <connections>
+                                        <action selector="changeSwitchState:" destination="-1" eventType="valueChanged" id="dt9-oM-9fu"/>
+                                    </connections>
+                                </switch>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guz-rQ-ZTL">
+                                    <rect key="frame" x="0.0" y="36" width="197" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="M6W-Xg-imP"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="M6W-Xg-imP"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=compact">
+                                        <mask key="constraints">
+                                            <include reference="M6W-Xg-imP"/>
+                                        </mask>
+                                    </variation>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="US3-oL-YV2"/>
+                                <constraint firstItem="guz-rQ-ZTL" firstAttribute="width" secondItem="ssl-iP-dLf" secondAttribute="width" id="WVn-Gh-rvy"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="US3-oL-YV2"/>
+                                    <exclude reference="WVn-Gh-rvy"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=compact" distribution="equalCentering" spacing="0.0">
+                                <mask key="constraints">
+                                    <include reference="US3-oL-YV2"/>
+                                    <include reference="WVn-Gh-rvy"/>
+                                </mask>
+                            </variation>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Okc-qd-WIf">
+                            <rect key="frame" x="0.0" y="180" width="197" height="60"/>
+                            <subviews>
+                                <switch opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j3s-fr-4zI" customClass="PomodoroSwicth" customModule="PomodoroTimer" customModuleProvider="target">
+                                    <rect key="frame" x="74" y="0.0" width="51" height="31"/>
+                                    <connections>
+                                        <action selector="changeSwitchState:" destination="-1" eventType="valueChanged" id="uP5-XE-gjX"/>
+                                    </connections>
+                                </switch>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIX-Lh-HfC">
+                                    <rect key="frame" x="0.0" y="36" width="197" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="JLZ-4Q-mOt"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="JLZ-4Q-mOt"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=compact">
+                                        <mask key="constraints">
+                                            <include reference="JLZ-4Q-mOt"/>
+                                        </mask>
+                                    </variation>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="TEA-ps-Iro"/>
+                                <constraint firstItem="jIX-Lh-HfC" firstAttribute="width" secondItem="Okc-qd-WIf" secondAttribute="width" id="wDq-iE-INJ"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="TEA-ps-Iro"/>
+                                    <exclude reference="wDq-iE-INJ"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=compact" distribution="equalCentering" spacing="0.0">
+                                <mask key="constraints">
+                                    <include reference="TEA-ps-Iro"/>
+                                    <include reference="wDq-iE-INJ"/>
+                                </mask>
+                            </variation>
+                        </stackView>
+                    </subviews>
+                    <variation key="heightClass=compact" axis="vertical" distribution="equalSpacing" spacing="0.0"/>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JnE-C6-dUn">
+                    <rect key="frame" x="10" y="10" width="341" height="300"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="JnE-C6-dUn" secondAttribute="bottom" constant="10" id="5c2-MP-9ZH"/>
+                <constraint firstAttribute="trailing" secondItem="JnE-C6-dUn" secondAttribute="trailing" constant="10" id="89t-Nl-Rcu"/>
+                <constraint firstItem="nWJ-pI-6N6" firstAttribute="leading" secondItem="hiK-Yx-ljG" secondAttribute="leading" constant="10" id="BHJ-Iy-Hbn"/>
+                <constraint firstItem="JnE-C6-dUn" firstAttribute="width" secondItem="hiK-Yx-ljG" secondAttribute="width" multiplier="0.6" id="GEK-0E-o7r"/>
+                <constraint firstItem="nWJ-pI-6N6" firstAttribute="leading" secondItem="JnE-C6-dUn" secondAttribute="trailing" constant="10" id="HLh-62-1xv"/>
+                <constraint firstItem="biy-TZ-8lF" firstAttribute="top" secondItem="hiK-Yx-ljG" secondAttribute="top" constant="10" id="QHC-Yr-jzm"/>
+                <constraint firstItem="nWJ-pI-6N6" firstAttribute="top" secondItem="biy-TZ-8lF" secondAttribute="bottom" constant="30" id="Sxq-6V-Pba"/>
+                <constraint firstAttribute="trailing" secondItem="biy-TZ-8lF" secondAttribute="trailing" constant="10" id="acb-b3-KL2"/>
+                <constraint firstItem="JnE-C6-dUn" firstAttribute="leading" secondItem="hiK-Yx-ljG" secondAttribute="leading" constant="10" id="dKG-ii-vad"/>
+                <constraint firstItem="nWJ-pI-6N6" firstAttribute="top" secondItem="JnE-C6-dUn" secondAttribute="bottom" constant="10" id="dRw-xd-dkk"/>
+                <constraint firstItem="JnE-C6-dUn" firstAttribute="top" secondItem="hiK-Yx-ljG" secondAttribute="top" constant="10" id="dgG-fd-7Tl"/>
+                <constraint firstItem="biy-TZ-8lF" firstAttribute="top" secondItem="hiK-Yx-ljG" secondAttribute="topMargin" constant="30" id="jpb-cI-AbS"/>
+                <constraint firstAttribute="trailing" secondItem="nWJ-pI-6N6" secondAttribute="trailing" constant="10" id="nAi-hy-lLe"/>
+                <constraint firstItem="biy-TZ-8lF" firstAttribute="leading" secondItem="JnE-C6-dUn" secondAttribute="trailing" constant="10" id="unF-1L-EoY"/>
+                <constraint firstAttribute="bottom" secondItem="nWJ-pI-6N6" secondAttribute="bottom" constant="10" id="wG3-w9-vY7"/>
+                <constraint firstItem="JnE-C6-dUn" firstAttribute="top" secondItem="biy-TZ-8lF" secondAttribute="bottom" constant="10" id="wMO-kE-nIn"/>
+                <constraint firstItem="biy-TZ-8lF" firstAttribute="leading" secondItem="hiK-Yx-ljG" secondAttribute="leading" constant="10" id="wNW-Dh-VrZ"/>
+                <constraint firstItem="JnE-C6-dUn" firstAttribute="leading" secondItem="hiK-Yx-ljG" secondAttribute="leading" constant="10" id="yaJ-2u-Mg0"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="QHC-Yr-jzm"/>
+                    <exclude reference="unF-1L-EoY"/>
+                    <exclude reference="5c2-MP-9ZH"/>
+                    <exclude reference="GEK-0E-o7r"/>
+                    <exclude reference="dKG-ii-vad"/>
+                    <exclude reference="dgG-fd-7Tl"/>
+                    <exclude reference="HLh-62-1xv"/>
+                    <exclude reference="Sxq-6V-Pba"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=compact">
+                <mask key="constraints">
+                    <include reference="QHC-Yr-jzm"/>
+                    <exclude reference="jpb-cI-AbS"/>
+                    <include reference="unF-1L-EoY"/>
+                    <exclude reference="wNW-Dh-VrZ"/>
+                    <include reference="5c2-MP-9ZH"/>
+                    <exclude reference="89t-Nl-Rcu"/>
+                    <include reference="GEK-0E-o7r"/>
+                    <include reference="dKG-ii-vad"/>
+                    <include reference="dgG-fd-7Tl"/>
+                    <exclude reference="wMO-kE-nIn"/>
+                    <exclude reference="yaJ-2u-Mg0"/>
+                    <exclude reference="BHJ-Iy-Hbn"/>
+                    <include reference="HLh-62-1xv"/>
+                    <include reference="Sxq-6V-Pba"/>
+                    <exclude reference="dRw-xd-dkk"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="358" y="-11"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Backward" width="9" height="11"/>
+        <image name="Forward" width="9" height="11"/>
+    </resources>
+</document>
