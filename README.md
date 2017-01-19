@@ -1,6 +1,6 @@
-### Pomodoro Circles
+### Circles Timer
 
-Приложение для тайм-менеджмента, основанное на технике Pomodoro.
+Приложение, основанное на популярной технике для тайм-менеджмента.
 
 Поддержка iPhone с iOS 10.0+
 
@@ -22,13 +22,13 @@ pod install
 open -a Xcode PomodoroCircles.xcworkspace
 ```
 
-AppStore: https://itunes.apple.com/ru/app/pomodoro-circles-time-management/id1182814253
+AppStore: https://itunes.apple.com/ru/app/id1182814253
 
-Описание: http://nborzenko.ru/pomodoro_circles
+Описание: http://nborzenko.ru/circles_timer
 
 Скриншоты: 
 
-<img src="http://nborzenko.ru/pomodoro_circles/github/1.png" width="200">
-<img src="http://nborzenko.ru/pomodoro_circles/github/2.png" width="200">
-<img src="http://nborzenko.ru/pomodoro_circles/github/3.png" width="200">
-<img src="http://nborzenko.ru/pomodoro_circles/github/4.png" width="200">
+<img src="http://nborzenko.ru/circles_timer/github/1.png" width="200">
+<img src="http://nborzenko.ru/circles_timer/github/2.png" width="200">
+<img src="http://nborzenko.ru/circles_timer/github/3.png" width="200">
+<img src="http://nborzenko.ru/circles_timer/github/4.png" width="200">
