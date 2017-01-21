@@ -28,7 +28,7 @@ AppStore: https://itunes.apple.com/ru/app/id1182814253
 
 Скриншоты: 
 
-<img src="http://nborzenko.ru/circles_timer/github/1.png" width="200">
-<img src="http://nborzenko.ru/circles_timer/github/2.png" width="200">
-<img src="http://nborzenko.ru/circles_timer/github/3.png" width="200">
-<img src="http://nborzenko.ru/circles_timer/github/4.png" width="200">
+<img src="http://nborzenko.ru/public/circles_timer/github/1.png" width="200">
+<img src="http://nborzenko.ru/public/circles_timer/github/2.png" width="200">
+<img src="http://nborzenko.ru/public/circles_timer/github/3.png" width="200">
+<img src="http://nborzenko.ru/public/circles_timer/github/4.png" width="200">
